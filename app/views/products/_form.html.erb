@@ -28,10 +28,10 @@
    <%= f.text_field :price %> 
   </p>
 
-    <%= f.fields_for :owner do |owner_attribute| %>
+    <%= f.fields_for :brand do |brand_attribute| %>
       <p>
-        <%= owner_attribute.label :owner_name, "Owner name" %>
-        <%= owner_attribute.text_field :owner_name %>
+        <%= brand_attribute.label :brand_name, "Brand name" %>
+        <%= brand_attribute.text_field :brand_name %>
       </p>
     <% end %>
   <p>

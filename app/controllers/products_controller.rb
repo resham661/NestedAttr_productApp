@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 
   def new
       @product = Product.new
-      @product.build_owner
+      @product.build_brand
   end
 
   def create
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   private
   
     def product_params
-      params.require(:product).permit(:name, :price, owner_attributes: [:owner_name])
+      params.require(:product).permit(:name, :price, brand_attributes: [:brand_name])
     end
 
     def find_product
