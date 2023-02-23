@@ -2,19 +2,16 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show]
 
   def index
-    @products = Product.all
+    @products = Product.price_limit
   end
 
   def new
       @product = Product.new
       @product.build_owner
-
-      # @product.build_owner
   end
 
   def create
     @product = Product.new(product_params)
-    # @owner = @product.build_owner
     if @product.save
       flash[:notice] = "Product was created successfully!"
       redirect_to product_path(@product)     
